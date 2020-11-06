@@ -1,0 +1,11 @@
+server:
+  port: 3000
+mysql:
+  host: 192.168.121.134
+  port: 3306
+  database: tristan
+  user: tristan
+  password: tristan123
+  charset: utf8mb4
+gitlab:
+  url_prefix: http://git.wjh.com
