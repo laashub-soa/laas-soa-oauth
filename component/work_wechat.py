@@ -36,7 +36,7 @@ def select_user_info(access_token, code):
     if not result:
         raise MyServiceException("查询用户信息失败")
     if result["errcode"] != 0:
-        raise MyServiceException("查询用户信息失败")
+        raise MyServiceException("查询用户信息失败: %s" % result["errmsg"])
     if "UserId" not in result:
         raise MyServiceException("扫码用户不属于本应用内")
 
