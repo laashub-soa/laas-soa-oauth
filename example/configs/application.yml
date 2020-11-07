@@ -10,3 +10,4 @@ mysql:
 work_wechat:
   app_id:
   agent_id:
+  secret:
