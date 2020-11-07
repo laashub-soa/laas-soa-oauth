@@ -7,5 +7,6 @@ mysql:
   user: tristan
   password: tristan123
   charset: utf8mb4
-gitlab:
-  url_prefix: http://git.wjh.com
+work_wechat:
+  app_id: ww144549834d4c265e
+  agent_id: 1000006

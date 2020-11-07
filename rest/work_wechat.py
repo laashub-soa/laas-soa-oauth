@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 
 app = Blueprint('work_wechat', __name__,
                 url_prefix='/user/work_wechat')
@@ -9,4 +9,5 @@ app = Blueprint('work_wechat', __name__,
 
 @app.route('/auth-redirect')
 def auth_redirect():
+    print("get: ", request.args, "post: ", request.get_data())
     return "pong"
