@@ -1,0 +1,12 @@
+server:
+  port: 3000
+mysql:
+  host:
+  port:
+  database:
+  user:
+  password:
+  charset:
+work_wechat:
+  app_id:
+  agent_id:
