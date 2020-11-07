@@ -8,7 +8,7 @@ from exception import MyServiceException
 from timer import init_work_wechat_access_token
 
 app = Blueprint('work_wechat', __name__,
-                url_prefix='/user/work_wechat')
+                url_prefix='/work_wechat')
 
 """
 微信登录
