@@ -10,7 +10,7 @@ def select_access_token(corpid, corpsecret):
     :param corpsecret:
     :return:
     """
-    resp = requests.get("https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo", {
+    resp = requests.get("https://qyapi.weixin.qq.com/cgi-bin/gettoken", {
         "corpid": corpid,
         "corpsecret": corpsecret,
     })

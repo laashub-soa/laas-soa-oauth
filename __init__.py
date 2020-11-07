@@ -3,6 +3,7 @@ import os
 import urllib3
 from flask_cors import CORS
 
+import timer
 from component import mymysql
 
 urllib3.disable_warnings()
@@ -32,9 +33,6 @@ def index():
     return app.send_static_file("index.html")
 
 
-route.init(app)
-
-
 @app.errorhandler(500)
 def error(e):
     e = e.original_exception
@@ -57,3 +55,6 @@ handler = TimedRotatingFileHandler("logs/flask.log", when="D", interval=1, backu
                                    delay=False, utc=True)
 app.logger.addHandler(handler)
 handler.setFormatter(formatter)
+
+route.init(app)
+timer.init()
