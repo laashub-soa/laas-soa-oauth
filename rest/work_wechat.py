@@ -3,7 +3,9 @@ import json
 from flask import Blueprint, request, redirect
 
 import config
+from component import work_wechat
 from exception import MyServiceException
+from rest import permission
 from timer import init_work_wechat_access_token
 
 app = Blueprint('work_wechat', __name__,
@@ -36,5 +38,6 @@ def auth_redirect():
     # state = request.args.get("state")  # 通过校验state可以预防csrd攻击
     if not init_work_wechat_access_token.access_token:
         raise MyServiceException("access_token已失效, 请联系管理员")
-
+    user_info = work_wechat.select_user_info(init_work_wechat_access_token.access_token, code)
+    permission.record_token(user_info["user_id"], code)
     return redirect("/login?token=" + code)
