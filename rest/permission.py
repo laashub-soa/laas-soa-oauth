@@ -26,7 +26,7 @@ def verification_token():
     expire_day = 7  # 有效期7天
     if token in local_memory_token_record:
         local_memory_token_record_value = local_memory_token_record[token]
-        if int(time.time()) < local_memory_token_record_value["timestamp"] - 7 * 24 * 60 * 60:
+        if int(time.time()) < local_memory_token_record_value["timestamp"] + 7 * 24 * 60 * 60:
             return dumps([{"user_id": local_memory_token_record_value["user_id"]}])
     result = mymysql.execute(
         "select user_id from user_user_token where token = %(token)s and datediff(now(), date(update_datetime)) < %(expire_day)s",
